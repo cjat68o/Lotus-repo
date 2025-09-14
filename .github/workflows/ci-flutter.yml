@@ -1,0 +1,10 @@
+name: Flutter CI
+on: [push, pull_request]
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with: { flutter-version: '3.24.0' }
+      - run: cd apps/wallet_app && flutter pub get && flutter analyze

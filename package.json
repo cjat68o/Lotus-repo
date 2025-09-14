@@ -1,0 +1,18 @@
+{
+  "name": "lotus-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.6.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm -r install",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "dev:backend": "pnpm --filter lotus-backend dev",
+    "dev:admin": "pnpm --filter lotus-admin dev",
+    "build:contracts": "pnpm --filter lotus-contracts run build",
+    "test:contracts": "pnpm --filter lotus-contracts run test"
+  }
+}
